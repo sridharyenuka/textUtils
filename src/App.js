@@ -6,7 +6,7 @@ import TextForm from './components/Textform';
 import About from './components/About';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
-import Form from './components/Form';
+
 
 
 import {
