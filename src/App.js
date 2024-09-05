@@ -2,10 +2,11 @@
 import './App.css';
 //import About from './components/About';
 import Navbar from './components/Navbar';
-import TextForm from './components/TextForm';
+import TextForm from './components/Textform';
 import About from './components/About';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
+import Form from './components/Form';
 
 
 import {
@@ -39,7 +40,7 @@ function App() {
 
   const toggleMode=(cls)=>{
     removeBodyClasses();
-    console.log(cls)
+    // console.log(cls)
     document.body.classList.add('bg-'+cls)
     if(mode==='light'){
       setMode('dark')
@@ -65,18 +66,23 @@ function App() {
     <Router>
     <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
+    
     <div className="container my-3">
     <Routes>
-          <Route exact path="/about" element={<About mode={mode}/>}>
+          <Route index element={< TextForm heading="Try TextUtils- Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert}/>}/>
+          <Route exact path="/about" element={<About mode={mode}/>}/>
             
-          </Route>
-          <Route exact path="/" element={< TextForm heading="Try TextUtils- Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert}/>}>
+          {/* </Route> */}
+          
           {/* <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode}/> */}
-          </Route>
+        {/* </Route> */}
+        
     </Routes>
+   
     </div>
-    </Router>  
     
+    </Router>  
+    {/* <Form/> */}
     </>
   );
 }

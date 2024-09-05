@@ -1,6 +1,6 @@
 
 import React, {useState} from 'react'
-export default function TextForm(props) {
+export default function Textform(props) {
     const handleUpClick = ()=>{
         // console.log("Uppercase was clicked: " +  text);
         let newText = text.toUpperCase();
@@ -29,7 +29,7 @@ export default function TextForm(props) {
 
     // Credits: A
     const handleCopy = () => {
-        console.log("I am copy");
+        // console.log("I am copy");
         
         navigator.clipboard.writeText(text);
         props.showAlert("Copied to Clipboard!", "success");

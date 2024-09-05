@@ -1,10 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
+import { memo } from "react";
 
-export default function Navbar(props) {
+ function Navbar(props) {
   return (
+    <>
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+     { console.log("logging")}
     <div className="container-fluid">
       <Link className="navbar-brand" to="/">{props.title}</Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +41,7 @@ export default function Navbar(props) {
       </div>
     </div>
   </nav>
+  </>
   
   )
 }
@@ -45,3 +49,5 @@ Navbar.propTypes={
   title:PropTypes.string,
   aboutText: PropTypes.string
 }
+
+export default memo(Navbar)
