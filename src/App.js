@@ -72,7 +72,7 @@ function App() {
     <Routes>
           <Route path="/textutils" element={< TextForm heading="Try TextUtils- Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert}/>}/>
           <Route exact path="/about" element={<About mode={mode}/>}/>
-          <Route path="*" element={<Clickhome/>}/>
+          {/* <Route path="*" element={<Clickhome/>}/> */}
             
           {/* </Route> */}
           
