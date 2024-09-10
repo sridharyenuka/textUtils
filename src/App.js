@@ -6,6 +6,7 @@ import TextForm from './components/Textform';
 import About from './components/About';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
+import Clickhome from "./components/Clickhome";
 
 
 
@@ -69,8 +70,9 @@ function App() {
     
     <div className="container my-3">
     <Routes>
-          <Route index element={< TextForm heading="Try TextUtils- Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert}/>}/>
+          <Route path="/textutils" element={< TextForm heading="Try TextUtils- Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert}/>}/>
           <Route exact path="/about" element={<About mode={mode}/>}/>
+          <Route path="*" element={<Clickhome/>}/>
             
           {/* </Route> */}
           
